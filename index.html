@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketing Manager Candidates — Integrative Mind</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary:       #4B5D8C;
+      --primary-dark:  #233E82;
+      --accent:        #5C6AC4;
+      --bg-light:      #EAF6FF;
+      --bg-subtle:     #F4F7FB;
+      --text-dark:     #1C1C1C;
+      --text-mid:      #414345;
+      --text-light:    #6B7280;
+      --white:         #FFFFFF;
+      --border:        #D9D6E6;
+      --score-hi:      #2E7D32;
+      --score-badge:   #E8F5E9;
+      --tag-bg:        #EEF0FA;
+      --tag-color:     #3D4DAA;
+      --shadow-sm:     0 2px 8px rgba(35,62,130,0.08);
+      --shadow-md:     0 6px 24px rgba(35,62,130,0.12);
+      --radius:        12px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+      font-size: 16px;
+      color: var(--text-dark);
+      background: var(--bg-subtle);
+      line-height: 1.6;
+    }
+
+    /* ─── HEADER ─── */
+    .site-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    .header-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .header-logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .header-logo-mark svg { width: 20px; height: 20px; fill: white; }
+    .header-name {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+    .header-name span {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-light);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .header-sagan {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-light);
+      letter-spacing: 0.02em;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 55%, var(--accent) 100%);
+      color: var(--white);
+      padding: 72px 32px 64px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 100px;
+      padding: 5px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: rgba(255,255,255,0.9);
+    }
+    .hero h1 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700;
+      line-height: 1.18;
+      max-width: 700px;
+      margin: 0 auto 16px;
+    }
+    .hero-sub {
+      font-size: 18px;
+      color: rgba(255,255,255,0.82);
+      max-width: 560px;
+      margin: 0 auto 32px;
+      font-weight: 400;
+    }
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.78);
+      font-weight: 500;
+    }
+    .hero-meta-item svg { width: 16px; height: 16px; opacity: 0.85; }
+
+    /* ─── INTRO NOTE ─── */
+    .intro-note {
+      max-width: 780px;
+      margin: 48px auto 0;
+      padding: 0 24px;
+    }
+    .intro-card {
+      background: var(--white);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      box-shadow: var(--shadow-sm);
+    }
+    .intro-card p {
+      font-size: 16px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+    .intro-card p + p { margin-top: 12px; }
+    .intro-card strong { color: var(--primary); }
+
+    /* ─── SECTION LABEL ─── */
+    .section-label {
+      text-align: center;
+      padding: 56px 24px 24px;
+    }
+    .section-label h2 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .section-label p {
+      color: var(--text-light);
+      font-size: 15px;
+      margin-top: 6px;
+    }
+
+    /* ─── CANDIDATES GRID ─── */
+    .candidates {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px 72px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* ─── CANDIDATE CARD ─── */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+      border: 1px solid var(--border);
+    }
+    .card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .card-header {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: start;
+      gap: 20px;
+      padding: 28px 32px 20px;
+      border-bottom: 1px solid var(--bg-light);
+    }
+
+    /* Rank badge */
+    .rank-badge {
+      width: 44px;
+      height: 44px;
+      background: var(--bg-light);
+      border: 2px solid var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .rank-badge span {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--primary);
+    }
+
+    .card-name-block {}
+    .card-name {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .card-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+    .card-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      color: var(--text-light);
+    }
+    .card-meta-item svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .card-meta-item strong { color: var(--text-dark); font-weight: 600; }
+
+    /* Score */
+    .score-block {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .score-value {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--score-hi);
+      line-height: 1;
+    }
+    .score-label {
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    /* Tags */
+    .tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      padding: 16px 32px;
+      border-bottom: 1px solid #F0F2F8;
+    }
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-color);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .tag.health {
+      background: #E8F5E9;
+      color: #2E7D32;
+    }
+
+    /* Card body */
+    .card-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    @media (max-width: 700px) {
+      .card-body { grid-template-columns: 1fr; }
+      .card-header { grid-template-columns: auto 1fr; }
+      .score-block { display: none; }
+    }
+
+    .card-section {
+      padding: 24px 32px;
+    }
+    .card-section:first-child {
+      border-right: 1px solid #F0F2F8;
+    }
+    .card-section-title {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+    .card-section p {
+      font-size: 14.5px;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+    .strength-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .strength-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+    .strength-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    /* Card footer */
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      background: var(--bg-subtle);
+      border-top: 1px solid var(--border);
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .card-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+    }
+    .btn-outline:hover { background: var(--bg-light); }
+    .btn svg { width: 14px; height: 14px; }
+
+    .rate-pill {
+      background: var(--score-badge);
+      color: var(--score-hi);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* ─── VIDEO MODAL ─── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.72);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-box {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      max-width: 720px;
+      width: 100%;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.3);
+    }
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .modal-title {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .modal-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-light);
+      padding: 4px;
+      border-radius: 6px;
+      display: flex;
+    }
+    .modal-close:hover { background: var(--bg-light); }
+    .modal-video {
+      background: #000;
+      position: relative;
+      padding-top: 56.25%;
+    }
+    .modal-video video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* ─── FOOTER ─── */
+    .site-footer {
+      background: var(--primary-dark);
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+    }
+    .site-footer strong { color: rgba(255,255,255,0.9); }
+    .site-footer a { color: rgba(255,255,255,0.65); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 600px) {
+      .card-header { padding: 20px; }
+      .tags-row { padding: 12px 20px; }
+      .card-section { padding: 18px 20px; }
+      .card-footer { padding: 14px 20px; }
+      .hero { padding: 48px 20px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="header-brand" href="https://www.integrativemind.com/" target="_blank" rel="noopener">
+      <div class="header-logo-mark">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/>
+        </svg>
+      </div>
+      <div class="header-name">
+        Integrative Mind
+        <span>Psychiatry &amp; TMS · Brooklyn, NY</span>
+      </div>
+    </a>
+    <span class="header-sagan">Presented by Sagan</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Marketing Manager / Director · Remote</div>
+  <h1>5 Candidates Ready to Grow Your Practice</h1>
+  <p class="hero-sub">Vetted. Interviewed. Video-screened. Here's who I'd put in front of you.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      LATAM-based, EST-aligned
+    </div>
+    <div class="hero-meta-item">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2zm0 12c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z"/></svg>
+      All with video introductions
+    </div>
+    <div class="hero-meta-item">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 3a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm6 12H6v-.57c0-2 4-3.1 6-3.1s6 1.1 6 3.1V18z"/></svg>
+      $2,500–$3,500 / month
+    </div>
+  </div>
+</section>
+
+<!-- INTRO NOTE -->
+<div class="intro-note">
+  <div class="intro-card">
+    <p>I went through the full pool from your job brief — screened for Google Ads + Meta Ads + CRM, GoHighLevel familiarity, HIPAA awareness, and the hands-on execution DNA you're looking for. No strategy-only profiles.</p>
+    <p>Two of these five have direct <strong>healthcare or pharma marketing backgrounds</strong>. All five have completed video interviews and have been scored by our AI system. Sorted by fit — not just score.</p>
+  </div>
+</div>
+
+<div class="section-label">
+  <h2>The Shortlist</h2>
+  <p>Click "Watch Intro" on any card to see them in their own words.</p>
+</div>
+
+<!-- CANDIDATES -->
+<div class="candidates">
+
+  <!-- ── CANDIDATE 1: Jorge Perez ── -->
+  <article class="card">
+    <div class="card-header">
+      <div class="rank-badge"><span>1</span></div>
+      <div class="card-name-block">
+        <div class="card-name">Jorge Perez</div>
+        <div class="card-meta-row">
+          <div class="card-meta-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Mexico
+          </div>
+          <div class="card-meta-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2zm0 12c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z"/></svg>
+            7+ years exp.
+          </div>
+          <div class="card-meta-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            <strong>Healthcare marketing ✓</strong>
+          </div>
+        </div>
+      </div>
+      <div class="score-block">
+        <div class="score-value">88</div>
+        <div class="score-label">Match score</div>
+      </div>
+    </div>
+
+    <div class="tags-row">
+      <span class="tag health">Healthcare Marketing</span>
+      <span class="tag">HubSpot Certified</span>
+      <span class="tag">Google Ads</span>
+      <span class="tag">WordPress / SEO</span>
+      <span class="tag">B2B + B2C</span>
+      <span class="tag">Campaign Analytics</span>
+      <span class="tag">QuestionPro</span>
+    </div>
+
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-title">Why he fits</div>
+        <p>Jorge is the rare candidate with actual healthcare marketing experience — he ran campaigns in the healthcare space that delivered <strong>3x ROI</strong> and grew web traffic by 50%. Currently at QuestionPro as Marketing Delivery Manager, so he knows how to operate at the intersection of technology and strategy. He's HubSpot certified, comfortable with multi-channel execution, and understands compliance-sensitive messaging. The kind of guy who ships work weekly and doesn't wait for perfect.</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Key strengths</div>
+        <ul class="strength-list">
+          <li>7+ years across healthcare, education, retail, and tech</li>
+          <li>3x ROI on healthcare campaigns — has done this before</li>
+          <li>50% web traffic growth through SEO + content strategy</li>
+          <li>HubSpot certified, strong CRM/automation skills</li>
+          <li>Strong English, experienced managing remote-first roles</li>
+          <li>Master's in Marketing (in progress) + BA in Business</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <span class="rate-pill">$3,000 / month</span>
+      <div class="card-links">
+        <button class="btn btn-primary" onclick="openVideo('Jorge Perez', 'https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/6bd01341-739e-4984-b5ab-87e6adef380a')">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Watch Intro
+        </button>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/jorge-perez-cast/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- ── CANDIDATE 2: Erika Casallas ── -->
+  <article class="card">
+    <div class="card-header">
+      <div class="rank-badge"><span>2</span></div>
+      <div class="card-name-block">
+        <div class="card-name">Erika Casallas</div>
+        <div class="card-meta-row">
+          <div class="card-meta-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Panama
+          </div>
+          <div class="card-meta-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2zm0 12c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z"/></svg>
+            10+ years exp.
+          </div>
+          <div class="card-meta-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            <strong>Pharma / Life Sciences ✓</strong>
+          </div>
+        </div>
+      </div>
+      <div class="score-block">
+        <div class="score-value">87</div>
+        <div class="score-label">Match score</div>
+      </div>
+    </div>
+
+    <div class="tags-row">
+      <span class="tag health">Pharma / Life Sciences</span>
+      <span class="tag health">Patient-Focused Marketing</span>
+      <span class="tag">Novo Nordisk · IQVIA · Accenture</span>
+      <span class="tag">Omnichannel Campaigns</span>
+      <span class="tag">HubSpot</span>
+      <span class="tag">Master's in Neuromarketing</span>
+    </div>
+
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-title">Why she fits</div>
+        <p>Ten years in healthcare and life sciences — not adjacent to it, <em>in it</em>. Erika has run regulated marketing campaigns for Novo Nordisk, worked as a consultant at IQVIA and Accenture, and understands what patient-facing communications actually require. She grew content engagement by <strong>230%</strong> in her last role and has managed six-figure budgets. Her Master's in Neuromarketing from the Universidad Autónoma de Barcelona is directly relevant to mental health marketing. Fluent English (C2).</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Key strengths</div>
+        <ul class="strength-list">
+          <li>10+ yrs in healthcare / pharma / life sciences marketing</li>
+          <li>Novo Nordisk, IQVIA, Accenture — understands compliance culture</li>
+          <li>230% lift in content engagement in most recent role</li>
+          <li>Master's in Neuromarketing — strong fit for mental health context</li>
+          <li>Omnichannel campaign experience across digital + CRM</li>
+          <li>Bilingual English (C2) / Spanish — LATAM-based, EST overlap</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <span class="rate-pill">$2,500 / month</span>
+      <div class="card-links">
+        <button class="btn btn-primary" onclick="openVideo('Erika Casallas', 'https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/64b15135-2d5f-4b4c-b136-d6d042673cf8')">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Watch Intro
+        </button>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/erika-casallas-a443a46b/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn btn-outline" href="https://profiles.candidate-profiles.com/erika-c-marketing-manager-2025-10-21/" target="_blank" rel="noopener">
+          Full Profile
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- ── CANDIDATE 3: Dannia Suarez ── -->
+  <article class="card">
+    <div class="card-header">
+      <div class="rank-badge"><span>3</span></div>
+      <div class="card-name-block">
+        <div class="card-name">Dannia Suarez</div>
+        <div class="card-meta-row">
+          <div class="card-meta-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Ecuador
+          </div>
+          <div class="card-meta-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2zm0 12c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z"/></svg>
+            9+ years exp.
+          </div>
+          <div class="card-meta-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            Fractional CMO experience
+          </div>
+        </div>
+      </div>
+      <div class="score-block">
+        <div class="score-value">91</div>
+        <div class="score-label">Match score</div>
+      </div>
+    </div>
+
+    <div class="tags-row">
+      <span class="tag health">SaaS + Healthcare Exposure</span>
+      <span class="tag">Fractional CMO</span>
+      <span class="tag">HubSpot · ActiveCampaign</span>
+      <span class="tag">GA4 · Looker Studio</span>
+      <span class="tag">WordPress · Webflow</span>
+      <span class="tag">70% YoY Revenue Growth</span>
+      <span class="tag">Paid Media</span>
+    </div>
+
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-title">Why she fits</div>
+        <p>Dannia is the highest-scoring candidate in the pool. She's served as a <strong>Fractional CMO</strong> — meaning she's been in the seat, not just advising from it. Her track record includes 70% YoY revenue growth and 30% campaign ROI improvements. Background spans SaaS, healthcare, and e-commerce, and she's hands-on with the exact tech stack you need: HubSpot, ActiveCampaign, GA4, Looker Studio, WordPress, and Webflow. Bilingual, native English and Spanish.</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Key strengths</div>
+        <ul class="strength-list">
+          <li>Fractional CMO — has owned the full marketing function</li>
+          <li>70% YoY revenue growth, 30% campaign ROI improvement</li>
+          <li>Full tech stack: HubSpot, GA4, Looker Studio, WordPress, Webflow</li>
+          <li>Experience in regulated industries — understands compliance mindset</li>
+          <li>Native English + Spanish bilingual</li>
+          <li>Highest overall AI match score in the pool (91)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <span class="rate-pill">$3,500 / month</span>
+      <div class="card-links">
+        <button class="btn btn-primary" onclick="openVideo('Dannia Suarez', 'https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/7ed7946a-9487-43c3-a549-74773282fedf')">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Watch Intro
+        </button>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/dannia-suarez-651946185/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn btn-outline" href="https://profiles.candidate-profiles.com/dannia-s-marketing-manager-2025-10-21/" target="_blank" rel="noopener">
+          Full Profile
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- ── CANDIDATE 4: Andrea Picaso ── -->
+  <article class="card">
+    <div class="card-header">
+      <div class="rank-badge"><span>4</span></div>
+      <div class="card-name-block">
+        <div class="card-name">Andrea Picaso</div>
+        <div class="card-meta-row">
+          <div class="card-meta-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Argentina
+          </div>
+          <div class="card-meta-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2zm0 12c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z"/></svg>
+            12+ years exp.
+          </div>
+          <div class="card-meta-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            Psychology + Marketing background
+          </div>
+        </div>
+      </div>
+      <div class="score-block">
+        <div class="score-value">90</div>
+        <div class="score-label">Match score</div>
+      </div>
+    </div>
+
+    <div class="tags-row">
+      <span class="tag">Psychology Studies</span>
+      <span class="tag health">Healthcare Agency Experience</span>
+      <span class="tag">HubSpot · ActiveCampaign</span>
+      <span class="tag">Performance Marketing</span>
+      <span class="tag">LATAM + North America</span>
+      <span class="tag">CRM Analytics</span>
+      <span class="tag">Academic Director (Marketing)</span>
+    </div>
+
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-title">Why she fits</div>
+        <p>Twelve years in marketing — and what sets Andrea apart here is her <strong>psychology background</strong>. That's not a coincidence, it's an advantage for a mental health practice. She's worked with healthcare marketing agencies, understands compliance requirements, and combines that with real technical depth in performance marketing and CRM. She's also currently teaching a Digital Marketing Diploma — meaning she can articulate what she does and build systems that others can follow.</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Key strengths</div>
+        <ul class="strength-list">
+          <li>Psychology studies — unusually relevant for mental health context</li>
+          <li>12 yrs spanning LATAM, North America, and Europe</li>
+          <li>Healthcare marketing agency experience with compliance awareness</li>
+          <li>Deep CRM + automation: HubSpot, ActiveCampaign, complex workflows</li>
+          <li>Strong performance marketing — acquisition cost optimization</li>
+          <li>Currently teaches digital marketing — builds transferable systems</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <span class="rate-pill">$3,500 / month</span>
+      <div class="card-links">
+        <button class="btn btn-primary" onclick="openVideo('Andrea Picaso', 'https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/28f9414f-13c3-43d6-8f89-f66d700ed40c')">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Watch Intro
+        </button>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/contenidosdecalidad/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- ── CANDIDATE 5: Diana Reyes ── -->
+  <article class="card">
+    <div class="card-header">
+      <div class="rank-badge"><span>5</span></div>
+      <div class="card-name-block">
+        <div class="card-name">Diana Reyes</div>
+        <div class="card-meta-row">
+          <div class="card-meta-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Peru
+          </div>
+          <div class="card-meta-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2zm0 12c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z"/></svg>
+            8+ years exp.
+          </div>
+          <div class="card-meta-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            <strong>Pharma campaigns (GSK) ✓</strong>
+          </div>
+        </div>
+      </div>
+      <div class="score-block">
+        <div class="score-value">88</div>
+        <div class="score-label">Match score</div>
+      </div>
+    </div>
+
+    <div class="tags-row">
+      <span class="tag health">Pharma Marketing (GSK)</span>
+      <span class="tag">Edelman Peru</span>
+      <span class="tag">HubSpot · Mailchimp · ActiveCampaign</span>
+      <span class="tag">GA4 · Looker Studio</span>
+      <span class="tag">WordPress</span>
+      <span class="tag">LATAM Regional Experience</span>
+    </div>
+
+    <div class="card-body">
+      <div class="card-section">
+        <div class="card-section-title">Why she fits</div>
+        <p>Diana has worked with <strong>GSK (GlaxoSmithKline)</strong> on compliant pharma campaigns — which means she's navigated regulated marketing in a real-world healthcare setting, not just theoretically. Her background at Edelman Peru and Métrica Comunicación includes campaigns for LG, Coca-Cola, and GSK with PR values between $500K–$1M per event. She knows how to generate results in high-stakes, sensitive industries. GA4, HubSpot, Looker Studio — all there. Strong English and cross-cultural LATAM experience.</p>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Key strengths</div>
+        <ul class="strength-list">
+          <li>GSK pharma marketing campaigns — real compliance experience</li>
+          <li>PR event results: $500K–$1M value per campaign</li>
+          <li>CRM: HubSpot, Mailchimp, ActiveCampaign — all hands-on</li>
+          <li>GA4 + Looker Studio dashboards for performance tracking</li>
+          <li>WordPress content management, SEO basics</li>
+          <li>8+ years, LATAM regional scope, strong English</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <span class="rate-pill">$3,500 / month</span>
+      <div class="card-links">
+        <button class="btn btn-primary" onclick="openVideo('Diana Reyes', 'https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/81ec1526-a6e2-4c75-a916-5c99d7283009')">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Watch Intro
+        </button>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/diana-reyes-peru/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </article>
+
+</div><!-- /candidates -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>Curated by <strong>Jesus Pacheco</strong> · Head of White Glove Hirings · <strong>Sagan</strong></p>
+  <p style="margin-top:6px;">Questions? <a href="mailto:jesus.p@getsagan.com">jesus.p@getsagan.com</a></p>
+</footer>
+
+<!-- VIDEO MODAL -->
+<div class="modal-overlay" id="videoModal" onclick="closeVideoOnOverlay(event)">
+  <div class="modal-box">
+    <div class="modal-header">
+      <span class="modal-title" id="modalTitle">Candidate Introduction</span>
+      <button class="modal-close" onclick="closeVideo()" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+    </div>
+    <div class="modal-video">
+      <video id="modalVideo" controls playsinline preload="metadata"></video>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openVideo(name, url) {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('modalVideo');
+    const title = document.getElementById('modalTitle');
+    title.textContent = name + ' — Introduction';
+    video.src = url;
+    modal.classList.add('active');
+    video.play().catch(() => {});
+  }
+  function closeVideo() {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('modalVideo');
+    modal.classList.remove('active');
+    video.pause();
+    video.src = '';
+  }
+  function closeVideoOnOverlay(e) {
+    if (e.target === document.getElementById('videoModal')) closeVideo();
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeVideo();
+  });
+</script>
+
+</body>
+</html>
