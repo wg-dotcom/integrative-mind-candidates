@@ -768,6 +768,10 @@
     <div class="card-footer">
       <span class="rate-pill">$2,500 / month</span>
       <div class="card-links">
+        <button class="btn btn-primary" onclick="openVideo('Victor T.', 'https://drive.google.com/file/d/1LgRBUJ9kGcUw-9lOgvy1DXLT9E-wKdgb/view?usp=sharing')">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Watch Intro
+        </button>
       </div>
     </div>
   </article>
@@ -824,7 +828,7 @@
     <div class="card-footer">
       <span class="rate-pill">$2,500 / month</span>
       <div class="card-links">
-        <button class="btn btn-primary" onclick="openVideo('Brenda K.', 'https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/8068d46e-ea19-46ca-8b80-e752848fc7ea')">
+        <button class="btn btn-primary" onclick="openVideo('Brenda K.', 'https://drive.google.com/file/d/1xJ_c1o5mb8xmqIRnGArIzD89kyyhAAgb/view?usp=sharing')">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           Watch Intro
         </button>
@@ -940,7 +944,8 @@
       </button>
     </div>
     <div class="modal-video">
-      <video id="modalVideo" controls playsinline preload="metadata"></video>
+      <video id="modalVideo" controls playsinline preload="metadata" style="display:none"></video>
+      <iframe id="modalIframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:none; width:100%; height:100%;"></iframe>
     </div>
   </div>
 </div>
@@ -958,9 +963,13 @@
   function closeVideo() {
     const modal = document.getElementById('videoModal');
     const video = document.getElementById('modalVideo');
+    const iframe = document.getElementById('modalIframe');
     modal.classList.remove('active');
     video.pause();
     video.src = '';
+    iframe.src = '';
+    iframe.style.display = 'none';
+    video.style.display = 'none';
   }
   function closeVideoOnOverlay(e) {
     if (e.target === document.getElementById('videoModal')) closeVideo();
