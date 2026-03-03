@@ -440,12 +440,14 @@
       position: relative;
       padding-top: 56.25%;
     }
-    .modal-video video {
+    .modal-video video,
+    .modal-video iframe {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: contain;
+      border: none;
     }
 
     /* ─── FOOTER ─── */
@@ -952,24 +954,40 @@
 
 <script>
   function openVideo(name, url) {
-    const modal = document.getElementById('videoModal');
-    const video = document.getElementById('modalVideo');
-    const title = document.getElementById('modalTitle');
+    const modal  = document.getElementById('videoModal');
+    const video  = document.getElementById('modalVideo');
+    const iframe = document.getElementById('modalIframe');
+    const title  = document.getElementById('modalTitle');
     title.textContent = name + ' — Introduction';
-    video.src = url;
+
+    if (url.includes('drive.google.com')) {
+      const match = url.match(/\/d\/([^/?]+)/);
+      const previewUrl = match
+        ? 'https://drive.google.com/file/d/' + match[1] + '/preview'
+        : url;
+      video.style.display  = 'none';
+      video.src            = '';
+      iframe.src           = previewUrl;
+      iframe.style.display = 'block';
+    } else {
+      iframe.style.display = 'none';
+      iframe.src           = '';
+      video.src            = url;
+      video.style.display  = 'block';
+      video.play().catch(() => {});
+    }
     modal.classList.add('active');
-    video.play().catch(() => {});
   }
   function closeVideo() {
-    const modal = document.getElementById('videoModal');
-    const video = document.getElementById('modalVideo');
+    const modal  = document.getElementById('videoModal');
+    const video  = document.getElementById('modalVideo');
     const iframe = document.getElementById('modalIframe');
     modal.classList.remove('active');
     video.pause();
-    video.src = '';
-    iframe.src = '';
+    video.src            = '';
+    video.style.display  = 'none';
+    iframe.src           = '';
     iframe.style.display = 'none';
-    video.style.display = 'none';
   }
   function closeVideoOnOverlay(e) {
     if (e.target === document.getElementById('videoModal')) closeVideo();
